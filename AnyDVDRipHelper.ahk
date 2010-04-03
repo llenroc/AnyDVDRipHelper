@@ -17,7 +17,6 @@ SetTitleMatchMode, 3
 APPName = AnyDVD Rip Helper
 Version = 0.1
 AnyDVDRipperMainWindow = AnyDVD Ripper
-DVDDrive = X: ; TODO: get this from the running AnyDVD Ripper window
 
 GoSub, EnsureAdmin
 GoSub, CreateGuiWindow
@@ -26,6 +25,7 @@ GoSub, CreateGuiWindow
 Loop
 {
 	GoSub, WaitForAnyDVDWindow
+	GoSub, ParseDriveLetterFromAnyDVD
 	GoSub, WaitForDiscReady
 	GoSub, PerformRip
 	GoSub, EjectDisc
@@ -56,6 +56,20 @@ QueryCancelAutoPlayHandler(wParam, lParam, msg, hwnd)
 {
 	Return True
 }
+
+ParseDriveLetterFromAnyDVD:
+	WinActivate, %AnyDVDRipperMainWindow%
+	Sleep 500
+	SetTitleMatchMode, 2
+	SetTitleMatchMode, slow
+	WinGetText, DriveSelectionText, %AnyDVDRipperMainWindow%
+	Found := RegExMatch(DriveSelectionText, "m)^([A-Z]:) ", DriveMatch)
+	if Found = 0
+	{
+		Die("Failed to parse the selected DVD drive out of text: " . DriveSelectionText)
+	}
+	DVDDrive = %DriveMatch1%
+return
 
 WaitForDiscReady:
 	DriveGet, status, status, %DVDDrive%
