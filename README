@@ -1,0 +1,15 @@
+This is a script for the AutoHotKey program from http://www.autohotkey.com/
+
+AnyDVD and AnyDVD Ripper (the part that this script uses) come from SlySoft http://www.slysoft.com/en/anydvd.html
+
+There have been threads on their forums asking for 2 things:
+1) when a DVD is inserted, automatically start the backup
+2) when the backup is done, automatically eject
+(implicit) 3) when a new disc is inserted, have it start the backup again
+
+This way those of us with many DVD's to back up (We've lost too many to the kids causing scratches on them) can 
+make it a little easier and a lot faster, since without something like this you have to remember to go check 
+what the backup status is, swap the discs, then start the new backup.
+
+Warranty: None of any kind whatsoever
+License: GPL (which is GNU *General* Public License - not GNU Public License) since I started out with Adam Pash's DVD Rip and it's GPL
