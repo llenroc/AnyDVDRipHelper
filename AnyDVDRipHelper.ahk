@@ -44,7 +44,7 @@ CreateGuiWindow:
 
 	Gui, Add, Text, w400 h25 +0x201 +Border  vMsg
 
-	ShowMessage("Starting up Any DVD Rip Helper")
+	ShowMessage("Starting up " . AppName)
 	
 	Gui, Show, x0 y0 , %APPName%
 return
