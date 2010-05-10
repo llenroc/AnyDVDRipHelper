@@ -1,4 +1,4 @@
-This is a script for the AutoHotKey program from http://www.autohotkey.com/
+This is a script for the AutoHotKey program available from http://www.autohotkey.com/
 
 AnyDVD and AnyDVD Ripper (the part that this script uses) come from SlySoft http://www.slysoft.com/en/anydvd.html
 
